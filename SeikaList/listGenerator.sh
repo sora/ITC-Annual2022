@@ -1,7 +1,9 @@
 #!/bin/sh
 
 TARGET=list.tex
-SRC=`find . -name '*.tex' | sort`
+#SRC=`find . -name '*.tex' | sort`
+#SRC=`find . -name "../*/ITCannual-list-*.tex" | sort`
+SRC=`ls ../*/ITCannual-list-*.tex | sort`
 
 find . -name '*.tex' | xargs nkf --overwrite -w -Lu
 
@@ -85,4 +87,4 @@ do
 
 done
 
-rm tmp *_award.tex *_invit1.tex *_invit2.tex *_book.tex *_journal.tex *_review.tex *_patent.tex *_present.tex *_publish.tex *_note.tex *_news.tex
+rm tmp ../*/*_award.tex ../*/*_invit1.tex ../*/*_invit2.tex ../*/*_book.tex ../*/*_journal.tex ../*/*_review.tex ../*/*_patent.tex ../*/*_present.tex ../*/*_publish.tex ../*/*_note.tex ../*/*_news.tex
